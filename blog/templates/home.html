@@ -1,0 +1,114 @@
+<!doctype html>
+    <html lang="ko">
+      <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+        <title>LikeLion Static Page</title>
+      </head>
+      <body>
+        <!-- Search "nav bar" -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">The Travelers</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </div>
+        </nav>    
+        <br>
+    
+    <!-- Search "form"-->
+        <div class="container">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="submit2">Submit</label>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                </div>
+    
+            </form>
+            <br>
+            
+    <!--Search "Jumbotron" -->
+            <div class="jumbotron">
+                <h3 class="display-6">세상 모든 여행자들을 위한 공간</h3>
+                <hr class="my-3">
+                <p>안녕하세요, 세상 모든 여행자들을 위한 공간, The Travelers 입니다.<br> 여행 정보를 공유해 보아요! </p>
+                <a href= "{% url 'new' %}">글쓰러 가기</a>
+            </div>
+        
+    <!-- Search "Card" -->    
+    <!-- 컴포넌트 나란히 배치하기 : Search "Grid System" -->
+    
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <div class="card" style="width: 100%; padding:10px; ">
+                    <img src="img1.jpg" class="card-img-top" alt="Oslo">
+                    <div class="card-body">
+                        <p class="card-text"> 아름다운 북유럽, 노르웨이 오슬로 <br> 끝없는 백야가 펼쳐지는 곳 </p>
+                    </div>
+                </div> <br>
+            </div>
+    
+            <div class="form-group col-md-4">
+                <div class="card" style="width: 100%; padding:10px;">
+                    <img src="img2.jpg" class="card-img-top" alt="Quebec">
+                    <div class="card-body">
+                        <p class="card-text"> 맑은 호수에 비친 <br> 단풍색으로 물든 정취 </p>
+                    </div>
+                </div> <br>
+            </div>
+    
+            <div class="form-group col-md-4">
+                <div class="card" style="width: 100%; padding:10px;">
+                    <img src="img3.jpg" class="card-img-top" alt="Singapore">
+                    <div class="card-body">
+                        <p class="card-text">빛나는 야경을 가진 <br> 싱가포르의 밤 </p>
+                    </div>
+                </div> <br>
+            </div> 
+        </div>
+        </div>
+      </body>
+    </html>
+
+
+
+작성된 글 목록<br><br>
+
+{% for post in posts %}
+    {% if post.category != "private" %}
+        <a href="{% url 'post_detail' index=post.pk %}"><h3>{{post.title}}</h3></a>
+    {{ post.pub_date }}<br>
+    {{ post.body|linebreaks }}<br>
+
+    {% else %}
+        <p>비밀글입니다</p>
+    {% endif %}
+    <br>
+{% endfor %}
