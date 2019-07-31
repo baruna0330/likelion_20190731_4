@@ -1,6 +1,5 @@
 alabaster==0.7.12
 anaconda-client==1.2.2
-anaconda-project==0.8.3
 appnope==0.1.0
 appscript==1.0.1
 asn1crypto==0.24.0
@@ -18,7 +17,6 @@ backports.weakref==1.0.post1
 beautifulsoup4==4.7.1
 bitarray==0.9.3
 bkcharts==0.2
-blaze==0.11.3
 bleach==3.1.0
 bokeh==1.2.0
 boto==2.49.0
@@ -28,7 +26,7 @@ cffi==1.12.3
 chardet==3.0.4
 Click==7.0
 cloudpickle==1.2.1
-clyent==1.2.2
+clyent==1.2.1
 colorama==0.4.1
 conda==4.5.13
 conda-build==3.18.9
@@ -97,9 +95,6 @@ MarkupSafe==1.1.1
 matplotlib==3.1.0
 mccabe==0.6.1
 mistune==0.8.4
-mkl-fft==1.0.12
-mkl-random==1.0.2
-mkl-service==2.0.2
 mock==3.0.5
 more-itertools==7.0.0
 mpmath==1.1.0
@@ -116,7 +111,7 @@ numba==0.45.0
 numexpr==2.6.9
 numpy==1.16.4
 numpydoc==0.9.1
-odo==0.5.1
+odo==0.5.0
 olefile==0.46
 openpyxl==2.6.2
 packaging==19.0
@@ -218,7 +213,6 @@ wrapt==1.11.2
 wurlitzer==1.0.2
 xlrd==1.2.0
 XlsxWriter==1.1.8
-xlwings==0.15.8
 xlwt==1.2.0
 zict==1.0.0
 zipp==0.5.1
